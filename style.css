@@ -1,0 +1,171 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+  min-height:100vh;
+}
+
+/* INTRO PAGE */
+/* .intro{
+  background:url('bg.jpg') center/cover no-repeat;
+  
+} */
+ .intro{
+  background: url('bg.jpg') center/cover no-repeat;
+  background-size: cover;
+}
+
+
+.overlay{
+  background:rgba(0,0,0,0.5);
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.envelope{
+  background:#fff;
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  animation:pop 1s ease;
+  max-width:320px;
+}
+
+.envelope h2{
+  color:#ff4d6d;
+}
+
+.envelope button{
+  margin-top:15px;
+  padding:10px 25px;
+  background:#ff4d6d;
+  border:none;
+  color:#fff;
+  border-radius:25px;
+  cursor:pointer;
+}
+
+/* STORY PAGE */
+.story-page{
+  background:linear-gradient(to bottom,#ffd6e8,#fff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.card{
+  background:#fff;
+  border-radius:25px;
+  padding:25px;
+  max-width:350px;
+  text-align:center;
+  box-shadow:0 15px 30px rgba(0,0,0,0.15);
+  animation:fadeIn 1s ease;
+}
+
+.card img{
+  width:100%;
+  height: auto;
+  border-radius:20px;
+  margin-bottom:15px;
+}
+
+.card h2{
+  color:#ff4d6d;
+}
+
+.card p{
+  margin:10px 0;
+  font-size:1.05rem;
+}
+
+.card button{
+  margin-top:10px;
+  padding:10px 25px;
+  border:none;
+  background:#ff4d6d;
+  color:white;
+  border-radius:25px;
+  cursor:pointer;
+}
+
+/* Animations */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes pop{
+  0%{transform:scale(0.8);}
+  100%{transform:scale(1);}
+}
+/* Responsive */
+@media(max-width:400px){
+  .envelope, .card{
+    padding:20px;
+    max-width:90%;
+  }
+}
+/* HEART BLOOMING BACKGROUND */
+.hearts{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  z-index:-1;
+}
+
+.heart{
+  position:absolute;
+  bottom:-20px;
+  width:20px;
+  height:20px;
+  background:#ff4d6d;
+  transform:rotate(45deg);
+  animation:bloom 6s linear infinite;
+  opacity:0.8;
+}
+
+.heart::before,
+.heart::after{
+  content:"";
+  position:absolute;
+  width:20px;
+  height:20px;
+  background:#ff4d6d;
+  border-radius:50%;
+}
+
+.heart::before{
+  top:-10px;
+  left:0;
+}
+
+.heart::after{
+  left:-10px;
+  top:0;
+}
+
+/* Bloom animation */
+@keyframes bloom{
+  0%{
+    transform:translateY(0) rotate(45deg) scale(0.5);
+    opacity:0;
+  }
+  50%{
+    opacity:0.9;
+  }
+  100%{
+    transform:translateY(-100vh) rotate(45deg) scale(1.2);
+    opacity:0;
+  }
+}
